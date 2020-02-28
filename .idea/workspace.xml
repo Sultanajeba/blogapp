@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef99314e-bc9f-40f1-adec-700ee8fed603" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/My_Blog_Project/Procfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/My_Blog_Project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog_Project/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/My_Blog_Project/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog_Project/Procfile" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,7 +31,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/My_Second_Project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../My_Second_Project" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
