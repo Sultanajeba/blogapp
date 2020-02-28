@@ -1,6 +1,7 @@
 import os
 import django_heroku
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
@@ -12,12 +13,12 @@ MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'zyco6(&4q64wa224&-2p&(_b0l1zj5ua0)_+3kep@&xaeg)fel'
+SECRET_KEY = 'zyco6(&4q64wa224&-2p&(_b0l1zj5ua0)_+3kep@&xaeg)del'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -125,8 +126,6 @@ MEDIA_ROOT = MEDIA_DIR
 STATICFILES_DIR = [STATIC_DIR, ]
 LOGIN_URL = '/account/login/'
 
-
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 django_heroku.settings(locals())
-
