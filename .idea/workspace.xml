@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef99314e-bc9f-40f1-adec-700ee8fed603" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/media/blog_images/himu_GUCoFRU.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/App_Blog/blog_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/App_Blog/blog_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/App_Blog/blog_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/App_Blog/blog_list.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
