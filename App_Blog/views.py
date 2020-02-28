@@ -49,7 +49,7 @@ def blog_details(request, slug):
             comment.user = request.user
             comment.blog = blog
             comment.save()
-            return HttpResponseRedirect(reverse('App_Blog:blog_details', kwargs={'slug': blog.slug}))
+            return HttpResponseRedirect(reverse('App_Blog:blog_details', kwargs={'slug': slug}))
 
     return render(request, 'App_Blog/blog_details.html', context={'blog': blog, 'comment_form': comment_form, 'liked': liked,})
 
