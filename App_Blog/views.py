@@ -74,7 +74,6 @@ def unliked(request, pk):
     return HttpResponseRedirect(reverse('App_Blog:blog_details', kwargs={'slug': blog.slug}))
 
 
-
 class UpdateBlog(LoginRequiredMixin, UpdateView):
     model = Blog
     fields = ('blog_title', 'blog_content', 'blog_image')
