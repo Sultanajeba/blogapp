@@ -8,6 +8,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 import uuid
 # Create your views here.
 
+
 class MyBlogs(LoginRequiredMixin, TemplateView):
     template_name = 'App_Blog/my_blogs.html'
 
