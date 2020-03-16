@@ -19,7 +19,12 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="197d36e3-962e-48ab-b483-69eb01bcf326" />
   </component>
   <component name="ProjectId" id="1YJB3PiBuGCm3rYA6VzkqMfIixt" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -30,7 +35,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
