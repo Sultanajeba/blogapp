@@ -15,11 +15,7 @@
     </p>
 
         <hr>
-    {% if not liked %}
-        <a href="{% url 'App_Blog:liked_post' pk=blog.pk %}"><i class="fas fa-thumbs-up fa-2x" aria-hidden="true"></i></a>
-        {% else %}
-         <a href="{% url 'App_Blog:unliked_post' pk=blog.pk %}"><i class="fas fa-thumbs-down fa-2x" aria-hidden="true"></i></a>
-        {% endif %}
+    <div class="fb-like" data-href="http://127.0.0.1:8000/blog/{{blog}}" data-width="" data-layout="standard" data-action="like" data-size="small" data-share="true"></div>
     </div>
     <div class="col-sm-6">
         <img src="/media/{{blog.blog_image}}" width="50%">
@@ -27,25 +23,10 @@
 
 </div>
 <hr>
-<div class="row">
-    <div class="col-sm-6">
 
-<h5>Comments:</h5>
-        {% for comment in blog.blog_comment.all %}
-        <p><a href="#">@{{comment.user}}</a>{{comment.comment}}<br><h6>{{comment.comment_date}}</h6></p>
-        {% endfor %}
-    </div>
 
-    <div class="col-sm-6">
-        <form method="POST">
-            {{ comment_form|crispy }}
-            {% csrf_token %}
-            <button type="submit" class="btn btn-primary btn-sm">Comment</button>
-        </form>
-         </br>
-    </br>
-    </br>
-    </div>
+<div class="fb-comments" data-href="http://127.0.0.1:8000/blog/{{blog}}" data-width="" data-numposts="2"></div>
+
 
 
 

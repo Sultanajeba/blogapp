@@ -1,4 +1,5 @@
-from django.shortcuts import render, HttpResponseRedirect
+from django.shortcuts import render, HttpResponseRedirect, HttpResponse
+from django.contrib import messages
 from django.views.generic import CreateView, UpdateView, ListView, DetailView, View, TemplateView, DeleteView
 from App_Blog.models import Blog, Comment, Likes
 from  App_Blog.forms import CommentForm
@@ -11,6 +12,7 @@ import uuid
 
 class MyBlogs(LoginRequiredMixin, TemplateView):
     template_name = 'App_Blog/my_blogs.html'
+
 
 
 class CreateBlog(LoginRequiredMixin, CreateView):
@@ -49,9 +51,9 @@ def blog_details(request, slug):
             comment.user = request.user
             comment.blog = blog
             comment.save()
-            return HttpResponseRedirect(reverse('App_Blog:blog_details', kwargs={'slug': slug}))
+        return HttpResponseRedirect(reverse('App_Blog:blog_details', kwargs={'slug': slug}))
 
-    return render(request, 'App_Blog/blog_details.html', context={'blog': blog, 'comment_form': comment_form, 'liked': liked,})
+    return render(request, 'App_Blog/blog_details.html', context={'blog': blog, 'comment_form': comment_form, 'liked': liked, })
 
 
 @login_required
@@ -81,3 +83,18 @@ class UpdateBlog(LoginRequiredMixin, UpdateView):
 
     def get_success_url(self, **kwargs):
         return reverse_lazy('App_Blog:blog_details', kwargs={'slug': self.object.slug})
+
+
+def search(request):
+
+    query = request.GET['query']
+    if len(query)>78:
+        blogs = Blog.objects.none()
+    else:
+        blogsTitle = Blog.objects.filter(blog_title__icontains=query)
+        blogsContent = Blog.objects.filter(blog_content__icontains=query)
+        blogs = blogsTitle.union(blogsContent)
+    if blogs.count() == 0:
+        messages.warning(request, "No search results found. Refine your query.")
+    params = {'blogs': blogs, 'query': query}
+    return render(request, 'App_Blog/search.html', params)

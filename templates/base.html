@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
@@ -12,25 +13,48 @@
   <script src="https://kit.fontawesome.com/9970147341.js" crossorigin="anonymous"></script>
 
   <title>{% block title_block %} Blogs {% endblock %}</title>
+
+  <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v6.0"></script>
+
 </head>
 <body>
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="{% url 'index'  %}" ><img src="/media/g.jpg" width="50px" height="50px" class="rounded-circle"></a>
+        <a class="nav-link" href="{% url 'index'  %}" ><img src="/media/g.png" width="40px"  height="40px" class="rounded-circle"></a>
       </li>
-        {% if user.is_authenticated %}
+                              <form method="GET" action="/blog/search" class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="query" id="query">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+
+      {% if user.is_authenticated %}
+
+
     <div class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">@{{ user.username }}</a>
       <div class="dropdown-menu">
+
+
+
         <a class="dropdown-item" href="{% url 'App_Blog:create_blog' %}">Write Blog</a>
         <a class="dropdown-item" href="{% url 'App_Blog:my_blogs' %}">My Blogs</a>
         <a class="dropdown-item" href="{% url 'App_Login:profile' %}">Your Profile</a>
         <hr>
+
          <a class="dropdown-item" href="{% url 'App_Login:logout' %}">Logout</a>
       </div>
 
     {% else %}
+
+
+
+                   <form method="GET" action="/blog/search" class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="query" id="query">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+
 
       <li class="nav-item active">
         <a class="nav-link" href="{% url 'App_Login:signup' %}">Sign Up</a>

@@ -1,11 +1,27 @@
 {% extends 'base.html' %}
 
 {% load custom_filters %}
-{% block title_block %} Home {% endblock %}
+{% block title_block %} Search Results {% endblock %}
 {% block body_block %}
+<h2>Search results:</h2>
+<br>
+{% if blogs|length < 1 %}
+
+<p>Did you mean: {{query}}
+<p></p><b>Your query - {{query}} - did not match any documents.</b></p>
+<ul>
+    <li>
+<p>Try different keywords.</p>
+    </li>
+</ul>
+<ul>
+    <li>
+<p>Try more general keywords.</p>
+    </li>
+</ul>
+{% endif %}
 {% for blog in blogs %}
-<h3>{{blog.blog_title}}</h3>
-<h6><i>{{blog.publish_date}}</i></h6>
+
 <div class="row">
 <div class="col-sm-2 ">
    <img src="/media/{{ blog.blog_image }}" alt="{{blog.blog_image}}" title="{{blog.blog_title}}"
